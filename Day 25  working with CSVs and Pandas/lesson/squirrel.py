@@ -1,6 +1,6 @@
 import pandas as pd 
 
-squirrel_data = pd.read_csv("Day 25  working with CSVs and Pandas\\2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+squirrel_data = pd.read_csv("Day 25  working with CSVs and Pandas\\lesson\\2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
 
 print(squirrel_data["Primary Fur Color"])
 gray = squirrel_data["Primary Fur Color"].value_counts()["Gray"]
@@ -17,4 +17,4 @@ squirrel_dict = {
 
 
 data_frame = pd.DataFrame(squirrel_dict)
-data_frame.to_csv("Day 25  working with CSVs and Pandas\\squirrel_colour_quantity.csv")
+data_frame.to_csv("Day 25  working with CSVs and Pandas\\lesson\\squirrel_colour_quantity.csv")
