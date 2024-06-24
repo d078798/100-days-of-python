@@ -49,7 +49,7 @@ while game_on:
                 states_found += 1
                 if states_found == 50:
                     congrats = Turtle()
-                    congrats.write("CONGRATULATIONS! You guessed all of the states!", font=("Arial",20)align="center")
+                    congrats.write("CONGRATULATIONS! You guessed all of the states!", font=("Arial",20),align="center")
                     
                 
     
