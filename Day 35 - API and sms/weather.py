@@ -3,8 +3,11 @@ import json
 import os
 import certifi
 from twilio.rest import Client
+from twilio.http.http_client import TwilioHttpClient
 
 certifi.where()
+
+
 
 with open(r"C:\Users\denglis2\API Keys.json","r") as f:
     api_keys = json.load(f)
@@ -39,7 +42,9 @@ for item in weaather_data["list"]:
         print(f"No umbrella needed at {raintime}")
         
 if rain:
-    client = Client(twilio_sid,twilio_token)
+    proxy_client = TwilioHttpClient()
+    proxy_client.session.proxies = {"https":os.environ["https_proxy"]}
+    client = Client(twilio_sid,twilio_token, http_client=proxy_client)
     
     message = client.messages.create(
         body="It is going to rain today, remember to bring an umbrella",
