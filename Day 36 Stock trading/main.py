@@ -30,11 +30,11 @@ import smtplib
 
 with open(r"C:\Users\denglis2\API Keys.json","r") as f:
     api_keys = json.load(f)
-# with open(r"C:\Users\d0787\Desktop\Pythonmail.txt") as f:
-#     lines = f.readlines()
+with open(r"C:\Users\d0787\Desktop\Pythonmail.txt") as f:
+    lines = f.readlines()
 
-# gmail_pass = lines[1].split(":")[1]
-# outlook_pass = lines[2].split(":")[1]
+gmail_pass = lines[1].split(":")[1]
+outlook_pass = lines[2].split(":")[1]
     
 def get_news():
     news_api = "https://newsapi.org/v2/everything?"
